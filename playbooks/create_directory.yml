@@ -1,8 +1,6 @@
 ---
 - name: CREATE DIRECTORY & COPY FILES
-  hosts: ansible
-  remote_user: root
-  become: true
+  hosts: all
   tasks:
     - name: CREATE DOCKER DIRECTORY
       file:
