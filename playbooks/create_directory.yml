@@ -1,6 +1,6 @@
 ---
 - name: CREATE DIRECTORY & COPY FILES
-  hosts: all
+  host: jenkins-ansible
   remote_user: root
   tasks:
     - name: CREATE DOCKER DIRECTORY
@@ -11,10 +11,10 @@
 
     - name: COPY DOCKERFILE
       copy:
-        src: ../Dockerfile
+        src: https://github.com/tahatalha/DevopsProject/blob/main/Dockerfile
         dest: /opt/docker
 
     - name: COPY WAR FILE
       copy:
-        src: ../webapp/target/webapp.war
+        src: /var/lib/jenkins/workspace/project-1/webapp/target/webapp.war
         dest: /opt/docker
