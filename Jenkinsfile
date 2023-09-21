@@ -14,7 +14,7 @@ pipeline{
 
         stage('CODE CHECKOUT') {
             steps {
-                git 'https://github.com/tahatalha/DevopsProject.git'
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/tahatalha/DevopsProject.git']]])
             }
         }
     }
