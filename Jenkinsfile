@@ -17,4 +17,5 @@ pipeline{
                 git 'https://github.com/tahatalha/DevopsProject.git'
             }
         }
+    }
 }
