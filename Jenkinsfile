@@ -35,7 +35,7 @@ pipeline{
         }
         stage('COPY JAR & DOCKERFILE') {
             steps {
-                sh 'ansible-playbook --connection=local -i playbooks/inventory.yml playbooks/create_directory.yml'
+                sh 'ansible-playbook playbooks/create_directory.yml'
             }
         }
         stage('PUSH IMAGE ON DOCKERHUB') {
