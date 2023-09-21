@@ -1,6 +1,6 @@
 ---
 - name: CREATE DIRECTORY & COPY FILES
-  hosts: all
+  hosts: ansible
   remote_user: root
   become: true
   tasks:
