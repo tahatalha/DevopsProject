@@ -1,6 +1,6 @@
 ---
 - name: CREATE DIRECTORY & COPY FILES
-  hosts: jenkins-ansible
+  hosts: all
   remote_user: root
   become: true
   tasks:
