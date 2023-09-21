@@ -39,11 +39,11 @@ pipeline{
             }
         }
         stage('PUSH IMAGE ON DOCKERHUB') {
-            withDockerRegistry(credentialsId: 'dockerhub', url: 'https://hub.docker.com/repositories/taha7890') {
             steps {
+                withDockerRegistry(credentialsId: 'dockerhub', url: 'https://hub.docker.com/repositories/taha7890'){
                 sh 'ansible-playbook playbooks/push_dockerhub.yml'              
-                  }
-            }   
+                  }  
+            }
         }
     }
 }
