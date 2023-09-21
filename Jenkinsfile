@@ -22,5 +22,16 @@ pipeline{
                 sh 'mvn clean install package'
             }
         } 
+         stage('SONAR SCANNER') {
+            environment {
+            sonar_token = credentials('sonar')
+            }
+            steps {
+                sh 'mvn sonar:sonar -Dsonar.projectName=$JOB_NAME \
+                    -Dsonar.projectKey=$JOB_NAME \
+                    -Dsonar.host.url=http://44.208.25.248/:9000 \
+                    -Dsonar.token=$sonar_token'
+            }
+        } 
     }
 }
