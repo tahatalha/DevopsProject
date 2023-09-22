@@ -1,7 +1,7 @@
 ---
 - name: CREATE DIRECTORY & COPY FILES
   hosts: localhost
-  become: true
+  remote_user: root
   tasks:
     - name: CREATE DOCKER DIRECTORY
       file:
@@ -11,10 +11,10 @@
 
     - name: COPY DOCKERFILE
       copy:
-        src: https://github.com/tahatalha/DevopsProject/blob/main/Dockerfile
+        src: ../Dockerfile
         dest: /opt/docker
 
     - name: COPY WAR FILE
       copy:
-        src: /var/lib/jenkins/workspace/project-1/webapp/target/webapp.war
+        src: ../webapp/target/webapp.war
         dest: /opt/docker
