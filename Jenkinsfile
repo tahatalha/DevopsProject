@@ -38,12 +38,5 @@ pipeline{
                 sh 'ansible-playbook playbooks/create_directory.yml'
             }
         }
-        stage('PUSH IMAGE ON DOCKERHUB') {
-            steps {
-                withDockerRegistry(credentialsId: 'dockerhub', url: 'https://hub.docker.com/repositories/taha7890'){
-                sh 'ansible-playbook playbooks/push_dockerhub.yml'              
-                  }  
-            }
-        }
     }
 }
